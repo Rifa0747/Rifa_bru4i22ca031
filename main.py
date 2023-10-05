@@ -1,21 +1,15 @@
-# factorial of given number
-def factorial(n):
+def linear_search_product(product_list, target_product):
+    indices = []
+    for i, product in enumerate(product_list):
+        if product == target_product:
+            indices.append(i)
+    return indices
 
-  # Checking the number
-  # is 1 or 0 then
-  # return 1
-  # other wise return
-  # factorial
-  if (n == 1 or n == 0):
-
-    return 1
-
-  else:
-
-    return (n * factorial(n - 1))
-
-
-# Driver Code
-num = 5
-print("number : ", num)
-print("Factorial : ", factorial(num))
+# Example usage:
+products = ["apple", "banana", "apple", "orange", "apple"]
+target = "apple"
+result = linear_search_product(products, target)
+if result:
+    print(f"The product '{target}' was found at indices: {result}")
+else:
+    print(f"The product '{target}' was not found in the list.")
